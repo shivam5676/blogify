@@ -17,7 +17,7 @@ function Hero() {
             style={{ height: "100%", width: "100%" }}
           ></img>
         </div>
-        <div style={{ height: "35vh" }} className=" col p-2">
+        <div style={{ height: "36vh",overflow:"hidden",textWrap:"nowrap" }} className=" col p-2">
           <div className="row row-cols-2">
             <p>20 March 2024</p>
             <div className="badge bg-danger d-flex justify-content-center align-items-center fw-bold">
@@ -25,12 +25,12 @@ function Hero() {
             </div>
           </div>
 
-          <h2>
+          <h2 className="text-wrap">
             <span className="text-warning">Mishra</span> : The{" "}
             <span className="text-danger">Mern Stack</span>  Developer{" "}
           </h2>
           <hr className="text-warning"></hr>
-          <p className="overflow-y-none word-wrap">
+          <p className="overflow-hidden word-wrap">
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem
