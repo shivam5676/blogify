@@ -17,30 +17,36 @@ function Hero() {
             style={{ height: "100%", width: "100%" }}
           ></img>
         </div>
-        <div style={{ height: "36vh",overflow:"hidden",textWrap:"nowrap" }} className=" col p-2">
-          <div className="row row-cols-2">
+        <div
+          style={{ height: "auto", overflow: "hidden", textWrap: "nowrap" }}
+          className=" col"
+        >
+          <div className="row row-cols-1 row-cols-md-2">
             <p>20 March 2024</p>
             <div className="badge bg-danger d-flex justify-content-center align-items-center fw-bold">
               Featured
             </div>
           </div>
 
-          <h2 className="text-wrap">
+          <h2 className="text-wrap ">
             <span className="text-warning">Mishra</span> : The{" "}
-            <span className="text-danger">Mern Stack</span>  Developer{" "}
+            <span className="text-danger word-wrap">Mern Stack</span> Developer{" "}
           </h2>
           <hr className="text-warning"></hr>
-          <p className="overflow-hidden word-wrap">
+          <p
+            className="overflow-hidden text-wrap text-truncate"
+            style={{ maxHeight: "100px" }}
+          >
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
-            lorem ipsum qwerty ipsum content ipsum everything is lorem
-            epsumlorem ipsum qwerty ipsum content ipsum everything is lorem
+            lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
+            lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
           </p>
-          <div className="d-flex justify-content-end">
-            <button className="btn btn-outline-warning mx-5"> read more</button>
+          <div className="d-flex justify-content-end ">
+            <button className="btn btn-outline-warning "> read more</button>
           </div>
         </div>
       </div>
