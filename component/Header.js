@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 function NavBar() {
   const router = useRouter();
   return (
-    <div className="container-fluid text-warning  pt-3 fixed-top bg-dark">
+    <div className="container-fluid text-warning  pt-3 fixed-top bg-dark border-bottom">
       <div className="container d-flex justify-content-between">
         <div>
           <h2>Blogify</h2>
