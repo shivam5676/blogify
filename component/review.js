@@ -38,7 +38,7 @@ function Review() {
             </div>
             <div className="p-3 word-wrap text-break">
               {" "}
-              sahdhgxdhgahghagjaghsjhgaghgggshghsghajgakajkjakhshkwklqiiwioihhsmnklsiksahdhgxdhgahghagjaghsjhgaghgggshghsghajgakajkjakhshkwklqiiwioihhsmnklsik
+              sahdhgxdhgahghagjaghsjhgaghgggshghsghajgakajkjakhshkwklqiiwioihhsmnklsiksahdhgxdhgahghagjaghsjhgaghgggshghsghajgakaj kjakhsh kwklqiiwioihhsmnklsik
             </div>
             <div className="d-flex justify-content-center">
               <div className="m-2">
