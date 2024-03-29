@@ -11,7 +11,14 @@ function NavBar() {
           <h2>Blogify</h2>
         </div>
         <div className="d-flex">
-          <p className="px-3">home</p>
+          <p
+            className="px-3"
+            onClick={() => {
+              router.push("/");
+            }}
+          >
+            home
+          </p>
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"

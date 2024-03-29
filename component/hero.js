@@ -1,4 +1,5 @@
 import React from "react";
+import coordinatesJpg from "../public/mishracordinates.jpg";
 
 function Hero() {
   return (
@@ -11,9 +12,8 @@ function Hero() {
         <div style={{ height: "35vh" }} className=" mx-2 col rounded">
           <img
             alt="our services"
-            src={
-              "https://media.licdn.com/dms/image/D4D35AQEv75uUAyZ55w/profile-framedphoto-shrink_800_800/0/1690849670652?e=1711540800&v=beta&t=Enp1bOFJIW-7wLUOr76LF7ZNCth-8hsSbBRO2HUgEoU"
-            }
+            // src={"/mishracordinates.jpg"}
+            src={"/CROP_IMG_0003.jpg"}
             style={{ height: "100%", width: "100%" }}
           ></img>
         </div>
@@ -30,7 +30,8 @@ function Hero() {
 
           <h2 className="text-wrap ">
             <span className="text-warning">Mishra</span> : The{" "}
-            <span className="text-danger word-wrap">Mern Stack</span> Developer{" "}
+            <span className="text-danger word-wrap">The Co-ordinates</span>{" "}
+            Developer{" "}
           </h2>
           <hr className="text-warning"></hr>
           <p
