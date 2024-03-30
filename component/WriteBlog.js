@@ -2,23 +2,47 @@
 
 import React, { useRef } from "react";
 import NavBar from "./Header";
+import axios from "axios";
 
 function WriteBlog() {
+  const api = "http://localhost:2000";
   const titleRef = useRef();
   const descriptionRef = useRef();
   const ImageRef = useRef();
   const selectRef = useRef();
-  const addBlogHandler = () => {
-    console.log(
-      titleRef.current.value,
-      descriptionRef.current.value,
-      ImageRef.current.value,
-      selectRef.current.value
-    );
+  const addBlogHandler = async () => {
+    // console.log(
+    //   titleRef.current.value,
+    //   descriptionRef.current.value,
+    //   ImageRef.current.value,
+    //   selectRef.current.value
+    // );
+    const imageFile=ImageRef.current.files[0]
+
+    const reader = new FileReader();
+let base64Url;
+    reader.onload = () => {
+     base64Url = reader.result;
+    //  console.log(base64Url)
+    };
+
+    reader.readAsDataURL(imageFile);
+    console.log(base64Url)
+    
+    const myObj = {
+      title: titleRef.current.value,
+      content: descriptionRef.current.value,
+      image:base64Url,
+      category:selectRef.current.value
+    };
+    try {
+      const response = await axios.post(`${api}/addBlog`, myObj);
+    } catch (err) {
+      console.log("object");
+    }
   };
   return (
     <>
-  
       <NavBar></NavBar>
       <div
         className="container-fluid bg-success"
@@ -56,7 +80,7 @@ function WriteBlog() {
           </div>
           <div className="row my-1" style={{ width: "60%" }}>
             <label>Image url :</label>
-            <input className="rounded-pill ms-2" ref={ImageRef}></input>
+            <input className="rounded-pill ms-2" ref={ImageRef} type="file"></input>
           </div>
           <div className="row my-1 rounded-pill" style={{ width: "60%" }}>
             <label>Choose a Category :</label>

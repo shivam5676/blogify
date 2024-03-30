@@ -1,15 +1,19 @@
 "use client";
 
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { BiLike } from "react-icons/bi";
 import { FaComment } from "react-icons/fa";
 
-function Review() {
+const Comment = () => {
+  const api = "http://localhost:2000";
+  useEffect(() => {
+    console.log("shivam");
+  }, []);
   const addCommentHandler = () => {
     console.log("api fired.....");
     axios
-      .get("https://fakestoreapi.com/products")
+      .post(`${api}/addComment`)
       .then((res) => console.log(res))
       .then((json) => console.log(json));
   };
@@ -47,7 +51,7 @@ function Review() {
               border: "1px solid white",
             }}
           >
-            <div className="row row-cols-1 row-cols-sm-2">
+            <div className="row row-cols-1 row-cols-sm-2 px-2 py-1">
               <p className="col">name :</p>
               <p className="col">date</p>
             </div>
@@ -73,7 +77,7 @@ function Review() {
               border: "1px solid white",
             }}
           >
-            <div className="row row-cols-1 row-cols-sm-2">
+            <div className="row row-cols-1 row-cols-sm-2 px-2 py-1">
               <p className="col">name :</p>
               <p className="col">date</p>
             </div>
@@ -94,6 +98,6 @@ function Review() {
       </section>
     </>
   );
-}
+};
 
-export default Review;
+export default Comment;

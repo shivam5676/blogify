@@ -1,10 +1,19 @@
 "use client";
 
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useNavigate } from "react";
+import React, { useEffect, useNavigate } from "react";
 
 function Blogs() {
   const router = useRouter();
+  const api = "http://localhost:2000";
+  useEffect(() => {
+    async function fetchDAta() {
+      const response = await axios.get(`${api}/AllBlog`);
+      console.log(response);
+    }
+    fetchDAta();
+  }, []);
   return (
     <div className="container text-warning">
       <div className="mx-5 mt-2 row-cols-1 row row-cols-sm-2 row-cols-md-3">
@@ -23,7 +32,7 @@ function Blogs() {
           ></img>
           <h4>vehicle will get drone like system</h4>
           <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p> 
+            <p> december 2023</p>
             <p className="text-danger mx-3">sci-fi</p>
           </div>
         </div>

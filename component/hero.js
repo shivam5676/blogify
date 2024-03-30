@@ -30,15 +30,15 @@ function Hero() {
 
           <h2 className="text-wrap ">
             <span className="text-warning">Mishra</span> : The{" "}
-            <span className="text-danger word-wrap">The Co-ordinates</span>{" "}
-            Developer{" "}
+            <span className="text-danger word-wrap">The Intelligent</span>{" "}
+           "Mind"{" "}
           </h2>
           <hr className="text-warning"></hr>
           <p
             className="overflow-hidden text-wrap text-truncate"
             style={{ maxHeight: "100px" }}
           >
-            lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
+            la ilahi 
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
             lorem ipsum qwerty ipsum content ipsum everything is lorem epsum
