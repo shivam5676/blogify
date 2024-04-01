@@ -17,29 +17,41 @@ function WriteBlog() {
     //   ImageRef.current.value,
     //   selectRef.current.value
     // );
-    const imageFile=ImageRef.current.files[0]
+    const imageFile = ImageRef.current.files[0];
 
     const reader = new FileReader();
-let base64Url;
-    reader.onload = () => {
-     base64Url = reader.result;
-    //  console.log(base64Url)
+    let base64Url;
+    reader.onload = async () => {
+      base64Url = reader.result;
+      // console.log(base64Url);
+      
+  const formData = new FormData();
+  formData.append('title', titleRef.current.value);
+  formData.append('content', descriptionRef.current.value);
+  formData.append('category', selectRef.current.value);
+  formData.append('image', base64Url);
+      // const myObj = {
+      //   title: titleRef.current.value,
+      //   content: descriptionRef.current.value,
+      //   image: base64Url,
+      //   category: selectRef.current.value,
+      // };
+      console.log(formData);
+
+      try {
+        const response = await axios.post(`${api}/addBlog`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        console.log(response.data); // Assuming response contains data
+      } catch (err) {
+        console.log("Error adding blog:", err);
+      }
     };
 
     reader.readAsDataURL(imageFile);
-    console.log(base64Url)
-    
-    const myObj = {
-      title: titleRef.current.value,
-      content: descriptionRef.current.value,
-      image:base64Url,
-      category:selectRef.current.value
-    };
-    try {
-      const response = await axios.post(`${api}/addBlog`, myObj);
-    } catch (err) {
-      console.log("object");
-    }
+    console.log(base64Url);
   };
   return (
     <>
@@ -80,7 +92,11 @@ let base64Url;
           </div>
           <div className="row my-1" style={{ width: "60%" }}>
             <label>Image url :</label>
-            <input className="rounded-pill ms-2" ref={ImageRef} type="file"></input>
+            <input
+              className="rounded-pill ms-2"
+              ref={ImageRef}
+              type="file"
+            ></input>
           </div>
           <div className="row my-1 rounded-pill" style={{ width: "60%" }}>
             <label>Choose a Category :</label>
