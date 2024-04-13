@@ -24,24 +24,20 @@ function WriteBlog() {
     reader.onload = async () => {
       base64Url = reader.result;
       // console.log(base64Url);
-      
-  const formData = new FormData();
-  formData.append('title', titleRef.current.value);
-  formData.append('content', descriptionRef.current.value);
-  formData.append('category', selectRef.current.value);
-  formData.append('image', base64Url);
-      // const myObj = {
-      //   title: titleRef.current.value,
-      //   content: descriptionRef.current.value,
-      //   image: base64Url,
-      //   category: selectRef.current.value,
-      // };
+
+      const formData = new FormData();
+      formData.append("title", titleRef.current.value);
+      formData.append("content", descriptionRef.current.value);
+      formData.append("category", selectRef.current.value);
+
+      formData.append("image", imageFile);
+
       console.log(formData);
 
       try {
         const response = await axios.post(`${api}/addBlog`, formData, {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         });
         console.log(response.data); // Assuming response contains data

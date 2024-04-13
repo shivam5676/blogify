@@ -2,196 +2,45 @@
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useNavigate } from "react";
+import React, { useEffect, useNavigate, useState } from "react";
 
 function Blogs() {
+  const [data, setData] = useState(null);
   const router = useRouter();
   const api = "http://localhost:2000";
   useEffect(() => {
     async function fetchDAta() {
       const response = await axios.get(`${api}/AllBlog`);
       console.log(response);
+      setData(response.data);
     }
     fetchDAta();
   }, []);
+  const dataUrlStarter = `data:image/*;base64,`;
   return (
     <div className="container text-warning">
       <div className="mx-5 mt-2 row-cols-1 row row-cols-sm-2 row-cols-md-3">
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blogs/readBlog/124323243")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div
-            className="d-flex text-white justify-content-between mx-3 "
-            onClick={() => router.push("/blog/dashboard")}
-          >
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
-        <div
-          className=" col mb-3 "
-          style={{ height: "auto" }}
-          onClick={() => router.push("/blog/dashboard")}
-        >
-          <img
-            className=" py-1 border text-white"
-            alt="tre"
-            style={{ height: "200px", width: "100%" }}
-            src={
-              "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            }
-          ></img>
-          <h4>vehicle will get drone like system</h4>
-          <div className="d-flex text-white justify-content-between mx-3 ">
-            <p> december 2023</p>
-            <p className="text-danger mx-3">sci-fi</p>
-          </div>
-        </div>
+        {data &&
+          data.map((current) => (
+            <div
+              className=" col mb-3 "
+              style={{ height: "auto" }}
+              onClick={() => router.push(`/blogs/readBlog/${current._id}`)}
+              key={current._id}
+            >
+              <img
+                className=" py-1 border text-white"
+                alt="tre"
+                style={{ height: "200px", width: "100%" }}
+                src={`${dataUrlStarter} ${current.image}`}
+              ></img>
+              <h4>{current.title}</h4>
+              <div className="d-flex text-white justify-content-between mx-3 ">
+                <p> {current.createdAt}</p>
+                <p className="text-danger mx-3">{current.category}</p>
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );
